@@ -5,8 +5,11 @@ namespace itertools{
         private:
             T temp;
         public:
+            powerset(){
+                
+            }
             powerset(const T& container){
-
+                this->temp = temp;
             }
             auto begin() {
                 return temp.begin();

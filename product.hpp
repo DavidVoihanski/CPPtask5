@@ -6,8 +6,12 @@ namespace itertools{
             firstT first;
             secondT second;
         public:
+            product(){
+                
+            }
             product(const firstT& first, const secondT& second){
-
+                this->first = first;
+                this->second = second;
             }
             auto begin() {
                 return first.begin();

@@ -9,17 +9,17 @@ namespace itertools{
             firstT first;
             secondT second;
             chain(){
-
+                
             }
-            
             chain(const firstT& first,const secondT& second){
-
+                this->first = first;
+                this->second = second;
             }   
             auto begin(){
                 return first.begin();
             }
             auto end() {
-                return first.end();
+                return first.begin();
             }
     };
 }

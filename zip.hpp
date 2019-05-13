@@ -10,7 +10,8 @@ namespace itertools{
 
             }  
             zip(firstT first, secondT second){
-
+                this->first = first;
+                this->second = second;
             }
             auto begin() {
                 return first.begin();
