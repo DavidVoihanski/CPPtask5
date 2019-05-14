@@ -21,7 +21,7 @@ namespace itertools{
                 return set.begin();
             }
             auto end() const{
-                return set.end();
+                return set.begin();
             }
     };
 }

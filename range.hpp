@@ -1,4 +1,5 @@
 #pragma once
+#include<exception>
 namespace itertools{
     template<typename T>
     class range{
@@ -11,6 +12,7 @@ namespace itertools{
 
             }
             range(const T& start, const T& end){
+                //throw std::invalid_argument("bad");
                 this->first = start;
                 this->last = end;
             }
@@ -47,10 +49,10 @@ namespace itertools{
                 return !(this->current == other.current);
             }
             
-            template<typename other>
-            bool operator!=(other other_){
-                return !(this->current == *other_);
-            }
+            // template<typename other>
+            // bool operator!=(other other_){
+            //     return !(this->current == *other_);
+            // }
             bool operator == (const iterator& other) const{
                 return (this->current == other.current);
             }

@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <thread>
 using namespace std;
 
 #include "range.hpp"
@@ -25,15 +26,17 @@ string iterable_to_string(const Iterable& iterable) {
 }
 int main() {
 	string a = "abc";
-	if('a'-5 == 'a');
 	cout << (*a.end() == '\0') << endl;
 	std::cout << std::endl << std::endl << "Range of ints: " << std::endl;
-	for (int i: range(5,9))
+	for (int i: range(-5,9))
 		std::cout << i;    // 5678
 	std::cout << std::endl;
 	std::cout << std::endl << std::endl << "Range of doubles: " << std::endl;
-	for (double i: range(5.1,9.1))
+	for (double i: range(-5.1,9.9)){
 		std::cout << i << " ";    // 5.1 6.1 7.1 8.1
+		std::chrono::milliseconds timespan(1);
+		std::this_thread::sleep_for(timespan);
+	}
 	std::cout << std::endl << std::endl << "Range of chars: " << std::endl;
 	for (char i: range('a','e'))
 		std::cout << i << " ";    // a b c d 

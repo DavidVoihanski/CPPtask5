@@ -1,4 +1,5 @@
 #pragma once
+#include <exception>
 namespace itertools{
 
     template<typename firstT, typename secondT>

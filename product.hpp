@@ -23,7 +23,7 @@ namespace itertools{
                 return first.begin();
             }
             auto end() const{
-                return first.end();
+                return first.begin();
             }
     };
 }
