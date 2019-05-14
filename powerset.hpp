@@ -3,19 +3,25 @@ namespace itertools{
     template<typename T>
     class powerset{
         private:
-            T temp;
+            T set;
         public:
             powerset(){
-                
+
             }
             powerset(const T& container){
-                this->temp = temp;
+                this->set = container;
             }
             auto begin() {
-                return temp.begin();
+                return set.begin();
             }
             auto end() {
-                return temp.begin();
+                return set.begin();
+            }
+            auto begin() const{
+                return set.begin();
+            }
+            auto end() const{
+                return set.end();
             }
     };
 }

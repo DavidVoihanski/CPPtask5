@@ -19,5 +19,11 @@ namespace itertools{
             auto end() {
                 return first.begin();
             }
+            auto begin() const{
+                return first.begin();
+            }
+            auto end() const{
+                return first.end();
+            }
     };
 }
