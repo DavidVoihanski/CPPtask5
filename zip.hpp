@@ -52,10 +52,10 @@ namespace itertools{
                 this->second = second;
             }
             auto begin() const{
-                return const_chain_iterator{this->first.begin(), this->first.end(), this->second.begin()};
+                return const_zip_iterator{this->first.begin(), this->first.end(), this->second.begin()};
             }
             auto end() const{
-                return const_chain_iterator{this->first.end(), this->second.end()};
+                return const_zip_iterator{this->first.end(), this->second.end()};
             }
         };
 }
