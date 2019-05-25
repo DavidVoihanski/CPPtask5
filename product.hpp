@@ -45,6 +45,9 @@ namespace itertools{
         bool operator !=(const const_product_iterator& other) const{
             return (this->firstIterator != other.firstIterator && this->secondIterator != other.secondIterator);
          }
+        bool operator == (const const_product_iterator& other) const{
+            return !(this->firstIterator != other.firstIterator && this->secondIterator != other.secondIterator);
+         }
     }; 
     template<typename firstT, typename secondT>
     class product{
