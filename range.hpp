@@ -16,48 +16,6 @@ namespace itertools{
                 this->first = start;
                 this->last = end;
             }
-        
-        // class iterator{
-        //     public:
-        //     T current;
-        //     // iterator(){
-
-        //     // }
-        //     iterator(const iterator& other){
-        //         this->current = other.current;
-        //     }
-        //     iterator(const T& arg){
-        //         this->current = arg;
-        //     }
-        //     T& operator *(){
-        //         return current;
-        //     }
-        
-        //     iterator& operator++() {
-        //         this->current++;
-        //         return *this;
-        //     }
-        //     iterator& operator++(int){
-        //         iterator temp = *this;
-        //         this->current++;
-        //         return temp;
-        //     }
-        //     T& operator-(int num) const{
-        //         return (current - num);
-        //     }
-        //     bool operator !=(const iterator& other) const{
-        //         return !(this->current == other.current);
-        //     }
-            
-        //     // template<typename other>
-        //     // bool operator!=(other other_){
-        //     //     return !(this->current == *other_);
-        //     // }
-        //     bool operator == (const iterator& other) const{
-        //         return (this->current == other.current);
-        //     }
-            
-        // };//iterator
             class const_iterator{
             public:
             T current;
@@ -100,12 +58,6 @@ namespace itertools{
             
         };//iterator
 
-            // iterator begin() {
-            //     return iterator{this->first};
-            // }
-            // iterator end() {
-            //     return iterator{this->last};
-            // }
             const_iterator begin() const{
                 return const_iterator{this->first};
             }

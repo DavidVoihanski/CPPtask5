@@ -1,32 +1,35 @@
 #pragma once
 namespace itertools{
+    template<typename firstRes, typename secondRes>
+    class resultSet{
+        firstRes first;
+        secondRes second;
+        public:
+        resultSet(const firstRes& first_, const secondRes& second_):first(first_),second(second_){
+        }
+        friend std::ostream &operator<<(std::ostream &os, resultSet const &m){
+            os << m.first << "," << m.second;
+            return os;
+        }
+    };
     template<typename firstIt, typename secondIt>
     class const_zip_iterator{
         public:
         firstIt firstIterator;
-        firstIt firstEnd;
         secondIt secondIterator;
-        bool inSecond;
+        const_zip_iterator(){
+
+        }
         const_zip_iterator(const const_zip_iterator& other){
             this->firstIterator = other.firstIterator;
             this->secondIterator = other.secondIterator;
-            this->inSecond = other.inSecond;
         }
-        const_zip_iterator(firstIt first,  secondIt second){
-            this->firstIterator = first;
-            this->secondIterator = second;
-            this->inSecond = false;
-            }
-        const_zip_iterator(const firstIt& firstStart, const firstIt& firstEnd, const secondIt& second){
+        const_zip_iterator(const firstIt& firstStart, const secondIt& second){
             this->firstIterator = firstStart;
-            this->firstEnd = firstEnd;
             this->secondIterator = second;
-            this->inSecond = false;
         }
-        const std::string operator *(){
-            std::string toReturn = "";
-            toReturn += *firstIterator;
-            toReturn += *secondIterator;
+        const auto operator *(){
+            resultSet toReturn{*firstIterator, *secondIterator};
             return toReturn;
         }
         const_zip_iterator& operator++() {
@@ -52,7 +55,7 @@ namespace itertools{
                 this->second = second;
             }
             auto begin() const{
-                return const_zip_iterator{this->first.begin(), this->first.end(), this->second.begin()};
+                return const_zip_iterator{this->first.begin(), this->second.begin()};
             }
             auto end() const{
                 return const_zip_iterator{this->first.end(), this->second.end()};

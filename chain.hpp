@@ -56,7 +56,9 @@ namespace itertools{
         public:
             firstT first;
             secondT second;
-
+            chain(){
+                
+            }
             chain(const firstT& first,const secondT& second){
                 this->first = first;
                 this->second = second;

@@ -11,12 +11,6 @@ namespace itertools{
             powerset(const T& container){
                 this->set = container;
             }
-            auto begin() {
-                return set.begin();
-            }
-            auto end() {
-                return set.begin();
-            }
             auto begin() const{
                 return set.begin();
             }
