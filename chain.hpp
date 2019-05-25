@@ -48,6 +48,9 @@ namespace itertools{
         bool operator !=(const const_chain_iterator& other) const{
             return (this->firstIterator != other.firstIterator || this->secondIterator != other.secondIterator);
          }
+        bool operator == (const const_chain_iterator& other) const{
+            return !(this!=other);
+        }
         
     };  
     template<typename firstT, typename secondT>
