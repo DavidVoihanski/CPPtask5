@@ -17,6 +17,9 @@ namespace itertools{
                 ++this->iterator;
                 return *this;
         }
+        bool operator == (const const_powerset_iterator& other) const{
+            return !(this!=other);
+        }
     };
     template<typename T>
     class powerset{
