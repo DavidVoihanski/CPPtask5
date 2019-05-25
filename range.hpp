@@ -41,16 +41,8 @@ namespace itertools{
                 this->current++;
                 return temp;
             }
-            T& operator-(int num) const{
-                return (current - num);
-            }
             bool operator !=(const const_iterator& other) const{
                 return !(this->current == other.current);
-            }
-            
-            template<typename other>
-            bool operator!=(other other_){
-                return !(this->current == *other_);
             }
             bool operator == (const const_iterator& other) const{
                 return (this->current == other.current);
